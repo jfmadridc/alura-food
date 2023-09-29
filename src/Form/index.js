@@ -8,24 +8,18 @@ import Complete from "./Complete";
 import Stepper from "../Stepper";
 
 const Form = () => {
-	const [step, setStep] = useState(1);
+	const [step, setStep] = useState(0);
 
 	//step = 0 -> <DatosUsuario />
 	//step = 1 -> <DatosPersonales />
 	//step = 2 -> <DatosEntrega />
-	//step = 3 -> <complete />
+	//step = 3 -> <Complete />
 
-	const showStep = (currentStep) => {
-		switch (currentStep) {
-			case 0:
-				return <DatosUsuario />;
-			case 1:
-				return <DatosPersonales />;
-			case 2:
-				return <DatosEntrega />;
-			case 3:
-				return <Complete />;
-		}
+	const steps = {
+		0: <DatosUsuario />,
+		1: <DatosPersonales />,
+		2: <DatosEntrega />,
+		3: <Complete />,
 	};
 
 	return (
@@ -40,7 +34,7 @@ const Form = () => {
 				<Img src={"/favicon.png"} />
 				<Typography variant="h3">AluraFood</Typography>
 			</LogoSpace>
-			<FormSpace>{showStep(step)}</FormSpace>
+			<FormSpace>{steps[step]}</FormSpace>
 		</Box>
 	);
 };
