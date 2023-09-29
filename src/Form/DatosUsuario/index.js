@@ -24,7 +24,11 @@ const DatosUsuario = () => {
 			}}
 			onSubmit={(e) => {
 				e.preventDefault();
-				console.log(email, password);
+				if (email.value && password.value && !email.error && !password.error) {
+					console.log(email, password);
+				} else {
+					console.log("incomplete");
+				}
 			}}
 		>
 			<TextField
@@ -32,10 +36,9 @@ const DatosUsuario = () => {
 				variant="outlined"
 				fullWidth
 				margin="dense"
-				type="email"
+				value={email.value}
 				error={email.error}
 				helperText={email.error ? "Please enter a valid email" : ""}
-				value={email.value}
 				onChange={(e) => {
 					const inputEmail = e.target.value;
 					setEmail({ value: inputEmail, error: validateEmail(inputEmail) });
@@ -47,9 +50,9 @@ const DatosUsuario = () => {
 				fullWidth
 				margin="dense"
 				type="password"
-				error={password.error}
-				helperText={password.error && "Please a between 8 and 20 characters"}
 				value={password.value}
+				error={password.error}
+				helperText={password.error && "Please between 8 and 20 characters"}
 				onChange={(e) => {
 					const inputPassword = e.target.value;
 					setPassword({
