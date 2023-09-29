@@ -1,28 +1,15 @@
 import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
-
-// class ClassComponent extends React.Component {
-// 	render(){
-// 		return <>Content</>
-// 	}
-// }
-
-// function FunctionComponent(params) {
-// 	return <>Content</>
-// }
-
-// const FunctionComponentArrow = () => {
-// 	return <>Content</>
-// }
+import { validateEmail, validatePassword } from "./validations";
 
 const DatosUsuario = () => {
 	const [email, setEmail] = useState({
 		value: "",
-		valid: true,
+		valid: false,
 	});
 	const [password, setPassword] = useState({
 		value: "",
-		valid: true,
+		valid: false,
 	});
 
 	return (
@@ -49,7 +36,11 @@ const DatosUsuario = () => {
 				error={false}
 				helperText={false && "Please enter a valid email"}
 				value={email.value}
-				onChange={(e) => setEmail({ value: e.target.value, valid: true })}
+				onChange={(e) => {
+					const inputEmail = e.target.value;
+					const validEmail = validateEmail(inputEmail);
+					setEmail({ value: inputEmail, valid: validEmail });
+				}}
 			/>
 			<TextField
 				label="Password"
@@ -58,7 +49,12 @@ const DatosUsuario = () => {
 				margin="dense"
 				type="password"
 				value={password.value}
-				onChange={(e) => setPassword({ value: e.target.value, valid: true })}
+				onChange={(e) => {
+					const inputPassword = e.target.value;
+					const validPassword = validatePassword(inputPassword);
+					console.log();
+					setPassword({ value: inputPassword, valid: validPassword });
+				}}
 			/>
 			<Button variant="contained" type="submit">
 				Next
