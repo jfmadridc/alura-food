@@ -1,65 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 
-class DatosUsuario extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			email: {
-				value: "",
-				valid: true,
-			},
-			password: {
-				value: "",
-				valid: true,
-			},
-		};
-	}
+// class ClassComponent extends React.Component {
+// 	render(){
+// 		return <>Content</>
+// 	}
+// }
 
-	render() {
-		return (
-			<Box
-				component="form"
-				autocomplete="on"
-				sx={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					flexDirection: "column",
-				}}
-				onSubmit={(e) => {
-					e.preventDefault();
-					console.log(this.state);
-				}}
-			>
-				<TextField
-					label="Email"
-					variant="outlined"
-					fullWidth
-					margin="dense"
-					type="email"
-					error={false}
-					helperText={false && "Please enter a valid email"}
-					value={this.state.email.value}
-					onChange={(e) => this.setState({ email: { value: e.target.value } })}
-				/>
-				<TextField
-					label="Password"
-					variant="outlined"
-					fullWidth
-					margin="dense"
-					type="password"
-					value={this.state.password.value}
-					onChange={(e) =>
-						this.setState({ password: { value: e.target.value } })
-					}
-				/>
-				<Button variant="contained" type="submit">
-					Siguiente
-				</Button>
-			</Box>
-		);
-	}
-}
+// function FunctionComponent(params) {
+// 	return <>Content</>
+// }
+
+// const FunctionComponentArrow = () => {
+// 	return <>Content</>
+// }
+
+const DatosUsuario = () => {
+	const [email, setEmail] = useState({
+		value: "",
+		valid: true,
+	});
+	const [password, setPassword] = useState({
+		value: "",
+		valid: true,
+	});
+
+	return (
+		<Box
+			component="form"
+			autocomplete="on"
+			sx={{
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				flexDirection: "column",
+			}}
+			onSubmit={(e) => {
+				e.preventDefault();
+				console.log(email, password);
+			}}
+		>
+			<TextField
+				label="Email"
+				variant="outlined"
+				fullWidth
+				margin="dense"
+				type="email"
+				error={false}
+				helperText={false && "Please enter a valid email"}
+				value={email.value}
+				onChange={(e) => setEmail({ value: e.target.value, valid: true })}
+			/>
+			<TextField
+				label="Password"
+				variant="outlined"
+				fullWidth
+				margin="dense"
+				type="password"
+				value={password.value}
+				onChange={(e) => setPassword({ value: e.target.value, valid: true })}
+			/>
+			<Button variant="contained" type="submit">
+				Next
+			</Button>
+		</Box>
+	);
+};
 
 export default DatosUsuario;
