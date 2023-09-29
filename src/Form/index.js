@@ -16,10 +16,25 @@ const Form = () => {
 	//step = 3 -> <Complete />
 
 	const steps = {
-		0: <DatosUsuario />,
-		1: <DatosPersonales />,
-		2: <DatosEntrega />,
-		3: <Complete />,
+		0: [
+			<Typography variant="h4" align="center" gutterBottom={true}>
+				Log In
+			</Typography>,
+			<DatosUsuario />,
+		],
+		1: [
+			<Typography variant="h4" align="center" gutterBottom={true}>
+				Personal Information
+			</Typography>,
+			<DatosPersonales />,
+		],
+		2: [
+			<Typography variant="h4" align="center" gutterBottom={true}>
+				Delivery Information
+			</Typography>,
+			<DatosEntrega />,
+		],
+		3: [<></>, <Complete />],
 	};
 
 	return (
@@ -34,7 +49,11 @@ const Form = () => {
 				<Img src={"/favicon.png"} />
 				<Typography variant="h3">AluraFood</Typography>
 			</LogoSpace>
-			<FormSpace>{steps[step]}</FormSpace>
+			<FormSpace>
+				{steps[step][0]}
+				{step !== 3 && <Stepper currentStep={step} />}
+				{steps[step][1]}
+			</FormSpace>
 		</Box>
 	);
 };

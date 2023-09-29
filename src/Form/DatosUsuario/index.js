@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 import { validateEmail, validatePassword } from "./validations";
 
 const DatosUsuario = () => {
@@ -31,7 +31,6 @@ const DatosUsuario = () => {
 				}
 			}}
 		>
-			<Typography variant="h3">User Data</Typography>
 			<TextField
 				label="Email"
 				variant="outlined"
