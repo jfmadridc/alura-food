@@ -5,11 +5,11 @@ import { validateEmail, validatePassword } from "./validations";
 const DatosUsuario = () => {
 	const [email, setEmail] = useState({
 		value: "",
-		valid: false,
+		error: false,
 	});
 	const [password, setPassword] = useState({
 		value: "",
-		valid: false,
+		error: false,
 	});
 
 	return (
@@ -33,13 +33,12 @@ const DatosUsuario = () => {
 				fullWidth
 				margin="dense"
 				type="email"
-				error={false}
-				helperText={false && "Please enter a valid email"}
+				error={email.error}
+				helperText={email.error ? "Please enter a valid email" : ""}
 				value={email.value}
 				onChange={(e) => {
 					const inputEmail = e.target.value;
-					const validEmail = validateEmail(inputEmail);
-					setEmail({ value: inputEmail, valid: validEmail });
+					setEmail({ value: inputEmail, error: validateEmail(inputEmail) });
 				}}
 			/>
 			<TextField
@@ -48,12 +47,15 @@ const DatosUsuario = () => {
 				fullWidth
 				margin="dense"
 				type="password"
+				error={password.error}
+				helperText={password.error && "Please a between 8 and 20 characters"}
 				value={password.value}
 				onChange={(e) => {
 					const inputPassword = e.target.value;
-					const validPassword = validatePassword(inputPassword);
-					console.log();
-					setPassword({ value: inputPassword, valid: validPassword });
+					setPassword({
+						value: inputPassword,
+						error: validatePassword(inputPassword),
+					});
 				}}
 			/>
 			<Button variant="contained" type="submit">
