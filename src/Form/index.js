@@ -8,25 +8,25 @@ import Complete from "./Complete";
 import Stepper from "../Stepper";
 
 const Form = () => {
-  return (
-    <Box
-      sx={{
-        padding: "30px",
-        display: "flexbox",
-        flexDirection: "column",
-      }}
-    >
-      <LogoSpace>
-        <Img src={"/favicon.png"} />
-        <Typography variant="h3">AluraFood</Typography>
-      </LogoSpace>
-      <FormSpace>
-        <DatosUsuario />
-        <DatosPersonales />
-        <DatosEntrega />
-      </FormSpace>
-    </Box>
-  );
+	return (
+		<Box
+			sx={{
+				padding: "30px",
+				display: "flexbox",
+				flexDirection: "column",
+			}}
+		>
+			<LogoSpace>
+				<Img src={"/favicon.png"} />
+				<Typography variant="h3">AluraFood</Typography>
+			</LogoSpace>
+			<FormSpace>
+				<DatosUsuario />
+				{/* <DatosPersonales />
+        <DatosEntrega /> */}
+			</FormSpace>
+		</Box>
+	);
 };
 
 export default Form;
