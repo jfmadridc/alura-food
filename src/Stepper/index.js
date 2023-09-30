@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Stepper, Step, StepLabel } from "@mui/material";
 
 const StepperComponent = (props) => {
-	const steps = ["User Log In", "Personal Info", "Delivery Info"];
+	const steps = ["User Info", "Personal Info", "Delivery Info"];
 
 	return (
 		<Box sx={{ width: "100%" }}>

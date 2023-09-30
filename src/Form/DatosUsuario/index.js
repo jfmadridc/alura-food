@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { validateEmail, validatePassword } from "./validations";
 
-const DatosUsuario = () => {
+const DatosUsuario = ({ updateStep }) => {
 	const [email, setEmail] = useState({
 		value: "",
 		error: false,
@@ -25,9 +25,8 @@ const DatosUsuario = () => {
 			onSubmit={(e) => {
 				e.preventDefault();
 				if (email.value && password.value && !email.error && !password.error) {
-					console.log(email, password);
-				} else {
-					console.log("incomplete");
+					//console.log(email, password);
+					updateStep(1);
 				}
 			}}
 		>

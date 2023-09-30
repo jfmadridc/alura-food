@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, Button, Box } from "@mui/material";
 
-const DatosEntrega = () => {
+const DatosEntrega = ({ updateStep }) => {
 	return (
 		<Box
 			component="form"
@@ -12,30 +12,34 @@ const DatosEntrega = () => {
 				justifyContent: "center",
 				flexDirection: "column",
 			}}
+			onSubmit={(e) => {
+				e.preventDefault();
+				updateStep(3);
+			}}
 		>
 			<TextField
-				label="Dirección"
+				label="Address"
 				variant="outlined"
 				fullWidth
 				margin="dense"
 				type="text"
 			/>
 			<TextField
-				label="Ciudad"
+				label="City"
 				variant="outlined"
 				fullWidth
 				margin="dense"
 				type="text"
 			/>
 			<TextField
-				label="Estado/Provincia"
+				label="State"
 				variant="outlined"
 				fullWidth
 				margin="dense"
 				type="text"
 			/>
 			<Button variant="contained" type="submit">
-				Crear cuenta
+				Create Account
 			</Button>
 		</Box>
 	);

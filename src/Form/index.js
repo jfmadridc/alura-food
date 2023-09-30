@@ -15,24 +15,28 @@ const Form = () => {
 	//step = 2 -> <DatosEntrega />
 	//step = 3 -> <Complete />
 
+	const updateStep = (step) => {
+		setStep(step);
+	};
+
 	const steps = {
 		0: [
 			<Typography variant="h4" align="center" gutterBottom={true}>
-				Log In
+				User Information
 			</Typography>,
-			<DatosUsuario />,
+			<DatosUsuario updateStep={updateStep} />,
 		],
 		1: [
 			<Typography variant="h4" align="center" gutterBottom={true}>
 				Personal Information
 			</Typography>,
-			<DatosPersonales />,
+			<DatosPersonales updateStep={updateStep} />,
 		],
 		2: [
 			<Typography variant="h4" align="center" gutterBottom={true}>
 				Delivery Information
 			</Typography>,
-			<DatosEntrega />,
+			<DatosEntrega updateStep={updateStep} />,
 		],
 		3: [<></>, <Complete />],
 	};
