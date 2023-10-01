@@ -35,6 +35,7 @@ const DatosUsuario = ({ updateStep }) => {
 				variant="outlined"
 				fullWidth
 				margin="dense"
+				required
 				value={email.value}
 				error={email.error}
 				helperText={email.error ? "Please enter a valid email" : ""}
@@ -49,6 +50,7 @@ const DatosUsuario = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="password"
+				required
 				value={password.value}
 				error={password.error}
 				helperText={password.error && "Please between 8 and 20 characters"}

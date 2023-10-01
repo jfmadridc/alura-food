@@ -37,6 +37,7 @@ const DatosPersonales = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="text"
+				required
 				value={name.value}
 				error={name.error}
 				helperText={name.error && "Please enter a valid name 2-30 letters"}
@@ -51,6 +52,7 @@ const DatosPersonales = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="text"
+				required
 				value={lastName.value}
 				error={lastName.error}
 				helperText={
@@ -70,6 +72,7 @@ const DatosPersonales = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="number"
+				required
 				inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
 				value={phone.value}
 				error={phone.error}

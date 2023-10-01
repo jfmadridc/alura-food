@@ -37,6 +37,7 @@ const DatosEntrega = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="text"
+				required
 				value={address.value}
 				error={address.error}
 				helperText={
@@ -57,6 +58,7 @@ const DatosEntrega = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="text"
+				required
 				value={city.value}
 				error={city.error}
 				helperText={
@@ -73,6 +75,7 @@ const DatosEntrega = ({ updateStep }) => {
 				fullWidth
 				margin="dense"
 				type="text"
+				required
 				value={state.value}
 				error={state.error}
 				helperText={
