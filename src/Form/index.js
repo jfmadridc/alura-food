@@ -8,7 +8,7 @@ import Complete from "./Complete";
 import Stepper from "../Stepper";
 
 const Form = () => {
-	const [step, setStep] = useState(3);
+	const [step, setStep] = useState(0);
 
 	//step = 0 -> <DatosUsuario />
 	//step = 1 -> <DatosPersonales />
@@ -36,7 +36,7 @@ const Form = () => {
 		>
 			<LogoSpace>
 				<Img src={"/favicon.png"} />
-				<Typography variant="h3">AluraFood</Typography>
+				<Typography variant="h3">JFM Food</Typography>
 			</LogoSpace>
 			<FormSpace>
 				<Typography variant="h4" align="center" gutterBottom={true}>
