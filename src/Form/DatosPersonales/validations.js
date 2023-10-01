@@ -1,10 +1,10 @@
 export const validateName = (name) => {
-	const nameRegEx = /^[A-Za-z]{2,30}$/;
+	const nameRegEx = /^(?!^\s+$)[A-Za-z\s]{2,30}$/;
 	return !nameRegEx.test(name);
 };
 
 export const validateLastName = (lastName) => {
-	const lastNameRegEx = /^[A-Za-z]{2,50}$/;
+	const lastNameRegEx = /^(?!^\s+$)[A-Za-z\s]{2,50}$/;
 	return !lastNameRegEx.test(lastName);
 };
 
