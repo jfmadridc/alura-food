@@ -39,7 +39,7 @@ const DatosPersonales = ({ updateStep }) => {
 				type="text"
 				value={name.value}
 				error={name.error}
-				helperText={name.error && "Please enter a valid name"}
+				helperText={name.error && "Please enter a valid name 2-30 letters"}
 				onChange={(e) => {
 					const inputName = e.target.value;
 					setName({ value: inputName, error: validateName(inputName) });
@@ -53,7 +53,9 @@ const DatosPersonales = ({ updateStep }) => {
 				type="text"
 				value={lastName.value}
 				error={lastName.error}
-				helperText={lastName.error && "Please enter a valid last name"}
+				helperText={
+					lastName.error && "Please enter a valid last name 2-50 letters"
+				}
 				onChange={(e) => {
 					const inputLastName = e.target.value;
 					setLastName({
