@@ -8,7 +8,7 @@ import Complete from "./Complete";
 import Stepper from "../Stepper";
 
 const Form = () => {
-	const [step, setStep] = useState(0);
+	const [step, setStep] = useState(3);
 
 	//step = 0 -> <DatosUsuario />
 	//step = 1 -> <DatosPersonales />
@@ -20,25 +20,10 @@ const Form = () => {
 	};
 
 	const steps = {
-		0: [
-			<Typography variant="h4" align="center" gutterBottom={true}>
-				User Information
-			</Typography>,
-			<DatosUsuario updateStep={updateStep} />,
-		],
-		1: [
-			<Typography variant="h4" align="center" gutterBottom={true}>
-				Personal Information
-			</Typography>,
-			<DatosPersonales updateStep={updateStep} />,
-		],
-		2: [
-			<Typography variant="h4" align="center" gutterBottom={true}>
-				Delivery Information
-			</Typography>,
-			<DatosEntrega updateStep={updateStep} />,
-		],
-		3: [<></>, <Complete />],
+		0: ["User Information", <DatosUsuario updateStep={updateStep} />],
+		1: ["Personal Information", <DatosPersonales updateStep={updateStep} />],
+		2: ["Delivery Information", <DatosEntrega updateStep={updateStep} />],
+		3: ["Account Created!", <Complete />],
 	};
 
 	return (
@@ -54,7 +39,9 @@ const Form = () => {
 				<Typography variant="h3">AluraFood</Typography>
 			</LogoSpace>
 			<FormSpace>
-				{steps[step][0]}
+				<Typography variant="h4" align="center" gutterBottom={true}>
+					{steps[step][0]}
+				</Typography>
 				{step !== 3 && <Stepper currentStep={step} />}
 				{steps[step][1]}
 			</FormSpace>

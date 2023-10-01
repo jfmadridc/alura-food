@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 const Img = styled.img`
 	width: 70%;
@@ -16,7 +16,6 @@ const Complete = () => {
 				flexDirection: "column",
 			}}
 		>
-			<Typography variant="h4">Account Created!</Typography>
 			<Img src="/complete.png" />
 		</Box>
 	);
