@@ -42,7 +42,7 @@ const DatosEntrega = ({ updateStep }) => {
 				error={address.error}
 				helperText={
 					address.error &&
-					"Please enter a valid address 5 to 70 characters (a-z)(0-9)(# - , .)(_)"
+					"Please enter a valid address 5 to 70 characters (a-z)(0-9)(# - , .)(-)"
 				}
 				onChange={(e) => {
 					const inputAddress = e.target.value;
